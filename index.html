@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRI SPONZ | Influencer Marketing Agency</title>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<style>
+:root {
+  --bg: #020617;
+  --primary: #2563eb;
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+}
+
+nav h1 {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+nav ul li:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+.hero {
+  padding: 120px 8% 80px;
+  text-align: center;
+  animation: fadeUp 1s ease;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero span {
+  color: var(--accent);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.hero button {
+  margin-top: 30px;
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.hero button:hover {
+  background: var(--accent);
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  padding: 30px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* NETWORK */
+.network {
+  text-align: center;
+}
+
+.network h3 {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+/* CONTACT */
+#contact {
+  max-width: 600px;
+  margin: auto;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+#contact textarea {
+  resize: none;
+  height: 120px;
+}
+
+#contact button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>TRI SPONZ</h1>
+  <ul>
+    <li>Home</li>
+    <li>Services</li>
+    <li>Network</li>
+    <li onclick="document.getElementById('contact').scrollIntoView()">Contact</li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h2>Scaling Brands Through <span>Influencer Marketing</span></h2>
+  <p>
+    TRI SPONZ is a performance-driven influencer marketing agency connecting
+    brands with the right creators to deliver measurable growth.
+  </p>
+  <button onclick="document.getElementById('contact').scrollIntoView()">
+    Get in Touch
+  </button>
+</div>
+
+<section>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Influencer Campaigns</h3>
+      <p>Strategic campaigns optimized for reach, engagement, and ROI.</p>
+    </div>
+    <div class="card">
+      <h3>Brand Partnerships</h3>
+      <p>Long-term creator partnerships that build trust and authority.</p>
+    </div>
+    <div class="card">
+      <h3>Content Strategy</h3>
+      <p>High-impact content aligned with brand goals.</p>
+    </div>
+  </div>
+</section>
+
+<section class="network">
+  <h2 class="section-title">Our Network</h2>
+  <h3>1000+ Influencers</h3>
+  <p>Verified creators across Instagram, YouTube & emerging platforms.</p>
+</section>
+
+<section>
+  <h2 class="section-title">Contact Us</h2>
+  <form id="contact">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Tell us about your project" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 TRI SPONZ. All rights reserved.
+</footer>
+
+<script>
+(function(){
+  emailjs.init("LQT2vc5XLhKuaQc2F");
+})();
+
+document.getElementById("contact").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_f7sfsrc",
+    "template_23gybd8",
+    this
+  ).then(() => {
+    alert("Message sent successfully!");
+    this.reset();
+  }, (error) => {
+    alert("Failed to send message.");
+    console.log(error);
+  });
+});
+</script>
+
+</body>
+</html>
